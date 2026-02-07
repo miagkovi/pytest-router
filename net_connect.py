@@ -3,9 +3,9 @@ from netmiko import ConnectHandler
 # Connection data
 device = {
     'device_type': 'cisco_ios', # router type
-    'host': '192.168.1.1',
+    'host': 'localhost',
     'username': 'admin',
-    'password': 'password123',
+    'password': 'admin',
 }
 
 # Connection status request

@@ -1,5 +1,5 @@
 """
-Simple router port scanner
+Simple router TCP port scanner
 Example output:
 
 Scanning 192.168.0.1...
@@ -17,14 +17,10 @@ from config import TARGET_IP
 target_ip = TARGET_IP
 # List of ports to check:
 ports = {
-    22: "SSH",
-    23: "Telnet",
-    80: "HTTP",
-    443: "HTTPS",
-    53: "DNS",
-    69: "TFTP",
-    161: "SNMP",
-    162: "SNMP",
+    2222: "SSH",
+    2323: "Telnet",
+    8080: "HTTP",
+    8443: "HTTPS",
     }
 
 print(f"Scanning {target_ip}...\n")
@@ -35,6 +31,6 @@ for port, name in ports.items():
     sock.settimeout(1) # wait 1 ms max
     result = sock.connect_ex((target_ip, port)) # 0 if port open
     
-    status = "OPEN" if result == 0 else "CLOSE"
+    status = "OPEN" if result == 0 else "CLOSED"
     print(f"Port {port} ({name}): {status}")
     sock.close()
