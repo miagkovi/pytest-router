@@ -6,9 +6,9 @@ Router 192.168.0.1 available!
 """
 
 import os
-from config import TARGET_IP
+from config import ROUTER_IP
 
-ip = TARGET_IP
+ip = ROUTER_IP
 response = os.system(f"ping -c 1 {ip}") # -n for Win, -c for Linux/Mac
 
 if response == 0:

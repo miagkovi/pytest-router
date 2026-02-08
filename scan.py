@@ -12,15 +12,15 @@ Port 53 (DNS): CLOSE
 """
 
 import socket
-from config import TARGET_IP
+from config import ROUTER_IP, SSH_PORT, HTTP_PORT, TELNEL_PORT, HTTPS_PORT
 
-target_ip = TARGET_IP
+target_ip = ROUTER_IP
 # List of ports to check:
 ports = {
-    2222: "SSH",
-    2323: "Telnet",
-    8080: "HTTP",
-    8443: "HTTPS",
+    SSH_PORT: "SSH",
+    TELNEL_PORT: "Telnet",
+    HTTP_PORT: "HTTP",
+    HTTPS_PORT: "HTTPS",
     }
 
 print(f"Scanning {target_ip}...\n")

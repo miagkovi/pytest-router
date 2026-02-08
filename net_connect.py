@@ -1,11 +1,12 @@
 from netmiko import ConnectHandler
+from config import ROUTER_IP, SSH_PORT, SSH_PASSWORD
 
 # Connection data
 device = {
     'device_type': 'cisco_ios', # router type
-    'host': 'localhost',
+    'host': ROUTER_IP,
     'username': 'admin',
-    'password': 'admin',
+    'password': SSH_PASSWORD,
 }
 
 # Connection status request

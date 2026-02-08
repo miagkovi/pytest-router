@@ -1,7 +1,9 @@
 import requests
 from requests.auth import HTTPBasicAuth
 
-url = "http://localhost:8080/"
+from config import ROUTER_IP, HTTP_PORT
+
+url = f"http://{ROUTER_IP}:{HTTP_PORT}/"
 headers = {"Accept": "application/yang-data+json"}
 
 # Ignore SSL (lab)
